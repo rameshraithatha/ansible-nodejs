@@ -8,7 +8,6 @@ date = (datetime.datetime.now() - datetime.timedelta(minutes=1)).strftime('[%d/%
 with (open("/var/log/nginx/access.log")) as infile:
     for line in infile:
         if line.split()[3] > date:
-            print line.split()[3]
             count += 1
 
 f = open('/etc/nginx/conf.d/nodejs.conf' ,'r').readlines()
